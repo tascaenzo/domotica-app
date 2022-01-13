@@ -4,8 +4,11 @@ import Card from '../../components/Card/Card';
 import { styles } from './style';
 import { Ionicons } from '@expo/vector-icons';
 import IotCard from '../../components/IotCard/IotCard';
+import { useLinkTo } from '@react-navigation/native';
+import { RoutesEnum } from '../../components/Routes/routes.enum';
 
-export default () => {
+const Home = (): JSX.Element => {
+  const linkTo = useLinkTo();
   return (
     <View style={{ justifyContent: 'center' }}>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -32,12 +35,15 @@ export default () => {
           icon={<Ionicons name="people" size={32} color="#FFF" />}
           label="1 Utente"
           title="Utenti"
+          onPress={() => linkTo(`/${RoutesEnum.Users}`)}
         />
       </ScrollView>
       <Text style={styles.label}>Preferiti</Text>
-      <IotCard style={{margin: 10}} label="test" color="gray" icon={<Ionicons name="people" size={32} color="#FFF" />} />
-      <IotCard style={{margin: 10}} label="test" color="#fae5a0" icon={<Ionicons name="flash" size={32} color="#FFF" />} />
+      <IotCard style={{ margin: 10 }} label="test" color="gray" icon={<Ionicons name="people" size={32} color="#FFF" />} />
+      <IotCard style={{ margin: 10 }} label="test" color="#fae5a0" icon={<Ionicons name="flash" size={32} color="#FFF" />} />
 
     </View>
   );
 };
+
+export default Home;

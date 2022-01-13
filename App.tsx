@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFonts } from 'expo-font';
-import Drawer from './components/Drawer/Drawer';
+import Routes from './components/Routes';
 
 export default () => {
   const [loaded] = useFonts({
@@ -8,11 +8,10 @@ export default () => {
     OxygenLight: require('./assets/fonts/Oxygen-Light.ttf'),
     OxygenBold: require('./assets/fonts/Oxygen-Bold.ttf'),
   });
-  
+
   if (!loaded) {
     return null;
   }
-  return (
-    <Drawer />
-  );
+
+  return (<Routes />);
 };

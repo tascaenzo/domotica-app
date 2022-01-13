@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { useStyles } from "./style";
 
 interface Props {
@@ -16,13 +16,13 @@ const Card = ({style, icon, title, label, primaryColor, secondayColor, onPress }
   const styles = useStyles({ primaryColor, secondayColor });
 
   return (
-    <View style={{...style, ...styles.container }}>
+    <TouchableOpacity style={{...style, ...styles.container }} onPress={onPress}>
       <View style={styles.iconContainer}>
         {icon}
       </View>
       <Text style={styles.label}>{label}</Text>
       <Text style={styles.title}>{title}</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 
