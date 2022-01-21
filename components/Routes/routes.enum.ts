@@ -1,4 +1,5 @@
 export enum RoutesEnum {
   Home = 'home',
-  Users = 'users'
+  Users = 'users',
+  NotificationCenter = 'notificationCenter',
 }

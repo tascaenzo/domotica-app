@@ -27,6 +27,7 @@ const Home = (): JSX.Element => {
           icon={<Ionicons name="notifications" size={32} color="#FFF" />}
           label="0 Messaggi"
           title="Notifiche"
+          onPress={() => linkTo(`/${RoutesEnum.NotificationCenter}`)}
         />
         <Card
           style={styles.card}
@@ -38,10 +39,10 @@ const Home = (): JSX.Element => {
           onPress={() => linkTo(`/${RoutesEnum.Users}`)}
         />
       </ScrollView>
+      
       <Text style={styles.label}>Preferiti</Text>
       <IotCard style={{ margin: 10 }} label="test" color="gray" icon={<Ionicons name="people" size={32} color="#FFF" />} />
       <IotCard style={{ margin: 10 }} label="test" color="#fae5a0" icon={<Ionicons name="flash" size={32} color="#FFF" />} />
-
     </View>
   );
 };
